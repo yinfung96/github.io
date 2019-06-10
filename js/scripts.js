@@ -10,30 +10,14 @@
     portfolio website.
 */
 	
-function animMeter(){
-    $(".meter > span").each(function() {
-                $(this)
-                    .data("origWidth", $(this).width())
-                    .width(0)
-                    .animate({
-                        width: $(this).data("origWidth")
-                    }, 1200);
-            });
-}
-animMeter();
+jQuery(document).ready(function(){
+	jQuery('.skillbar').each(function(){
+		jQuery(this).find('.skillbar-bar').animate({
+			width:jQuery(this).attr('data-percent')
+		},6000);
+	});
+});
 
-      $('#tab-container').easytabs({
-        animate			: true,
-        updateHash		: true,
-        transitionIn	: 'slideDown',
-        transitionOut	: 'slideUp',
-        animationSpeed	: 800,
-        tabActiveClass	: 'active'}).bind('easytabs:midTransition', function(event, $clicked, $targetPanel){
-            if($targetPanel.selector=='#resume'){
-                    animMeter();
-            }
-        });
-    });
 
 
 (function($) {
