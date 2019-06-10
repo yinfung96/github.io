@@ -9,6 +9,32 @@
     Description: This file contains all the scripts associated with the single-page
     portfolio website.
 */
+	
+function animMeter(){
+    $(".meter > span").each(function() {
+                $(this)
+                    .data("origWidth", $(this).width())
+                    .width(0)
+                    .animate({
+                        width: $(this).data("origWidth")
+                    }, 1200);
+            });
+}
+animMeter();
+
+      $('#tab-container').easytabs({
+        animate			: true,
+        updateHash		: true,
+        transitionIn	: 'slideDown',
+        transitionOut	: 'slideUp',
+        animationSpeed	: 800,
+        tabActiveClass	: 'active'}).bind('easytabs:midTransition', function(event, $clicked, $targetPanel){
+            if($targetPanel.selector=='#resume'){
+                    animMeter();
+            }
+        });
+    });
+
 
 (function($) {
 
