@@ -4784,8 +4784,8 @@ input[type="button"].btn-block {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #434E5E;
-  transition: width 0.6s ease;
+  background-color: #9da0a5;
+  transition: width 4.0s ease;
 }
 /*
 @media screen and (prefers-reduced-motion: reduce) {
