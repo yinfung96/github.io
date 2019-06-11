@@ -75,6 +75,32 @@
         });
 
     });
+    
+    // Create timeline
+    $('#experience2-timeline').each(function() {
+
+        $this = $(this); // Store reference to this
+        $userContent = $this.children('div'); // user content
+
+        // Create each timeline block
+        $userContent.each(function() {
+            $(this).addClass('vtimeline2-content').wrap('<div class="vtimeline2-point"><div class="vtimeline2-block"></div></div>');
+        });
+
+        // Add icons to each block
+        $this.find('.vtimeline2-point').each(function() {
+            $(this).prepend('<div class="vtimeline2-icon"><i class="fa fa-map-marker"></i></div>');
+        });
+
+        // Add dates to the timeline if exists
+        $this.find('.vtimeline2-content').each(function() {
+            var date = $(this).data('date');
+            if (date) { // Prepend if exists
+                $(this).parent().prepend('<span class="vtimeline2-date">'+date+'</span>');
+            }
+        });
+
+    });
 
     // Open mobile menu
     $('#mobile-menu-open').click(function() {
